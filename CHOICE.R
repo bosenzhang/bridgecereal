@@ -85,12 +85,12 @@ CHOICE<- function(User_working_dir, BlastSynWorking, query_length, distance_filt
      CHOICE_genome_summary <- matrix(nrow = Total_clusters, ncol =9)
      CHOICE_genome_summary[ , 1] <- rep(g_index, Total_clusters)
      CHOICE_genome_summary[1, 2] <- nrow(Target_g)
-     CHOICE_genome_summary[1, 3] < -distance_filter / 1000
+     CHOICE_genome_summary[1, 3] <- distance_filter / 1000
      CHOICE_genome_summary[1, 4] <- Total_clusters
      CHOICE_genome_summary[ , 5] <- 1:nrow(MeanSimilarity_cdsSize)
      CHOICE_genome_summary[ , 6] <- hclust_members
      CHOICE_genome_summary[ , 7] <- round(MeanSimilarity_cdsSize[, 1], digits = 3)
-     CHOICE_genome_summary[ , 8] < -round(MeanSimilarity_cdsSize[, 2], digits = 3)
+     CHOICE_genome_summary[ , 8] <- round(MeanSimilarity_cdsSize[, 2], digits = 3)
      CHOICE_genome_summary[Target_cluster, 9]<-c("Selected")
 
      colnames(CHOICE_genome_summary)<-c("Genomes", "TotalHSPs", "HeightCut(kb)", "TotalClusters", "ClusterIndex", "Members", "MeanSimilarity", paste("TotalLength", "/", ref_g, sep=''), "CandidateCluster")
